@@ -2,10 +2,19 @@ window.addEventListener('load', function () {
   map({ lat: 0, lng: 0}, null, 1);
 });
 
+$.get('/api/custom/' + encodeURI(toServer), function (res) {
+  console.log(res);
+});
+
+function sendToServer (number) {
+  
+}
+
 function data (silo) {
   navigator.geolocation.getCurrentPosition(function (pos) {
     var lat = pos.coords.latitude;
     var lng = pos.coords.longitude;
+
 
     // GET /api/name/lat/lng
     $.get('/api/' + silo.attr('id') + '/' + lat + '/' + lng, function (data) {

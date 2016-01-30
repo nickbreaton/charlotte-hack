@@ -1,4 +1,5 @@
 var tabs = [
+  'Location Preference',
   "Acute Myocardial Infarction (AMI) 30-Day Mortality Rate",
   "Heart Failure (HF) 30-Day Mortality Rate",
   "Pneumonia 30-Day Mortality Rate",
@@ -41,8 +42,7 @@ window.addEventListener('load', function () {
     for (var i = 0;  i < 26; i++) {
       toServer += sliders[i].value + ' ';
     }
-    $.get('/api/custom/' + encodeURI(toServer), function (res) {
-      console.log(res);
-    });
+
+    sendToServer(toServer);
   });
 });
