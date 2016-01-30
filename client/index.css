@@ -10,6 +10,10 @@ body {
     padding: 10px;
 }
 
+h1{
+  background: red;
+}
+
 #content {
     max-width: 800px;
     width: 90%;
@@ -35,6 +39,7 @@ body {
     height: auto !important;
     opacity: 1 !important;
 }
+<<<<<<< HEAD
 
 button {
     padding: 15px;
@@ -64,3 +69,5 @@ button:hover {
 .buttons {
     display: block;
 }
+=======
+>>>>>>> 59268a1d7d6caa0d42e306be5c24e206501ffde3
