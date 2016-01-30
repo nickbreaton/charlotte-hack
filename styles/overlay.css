@@ -6,12 +6,12 @@
   bottom: 0;
   visibility: hidden;
   z-index: 2;
-  opacity: 0;
-  background: white;
-  transition: display 0s, opacity 0.25s;
+  background: rgba(255,255,255,0);
+  transition: display 0s, background 0.25s;
+  padding: 20px;
 }
 
 #overlay.active {
   visibility: visible;
-  opacity: 0.1;
+  background: rgba(255,255,255,0.1);
 }

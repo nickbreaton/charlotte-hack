@@ -1,7 +1,22 @@
 var express = require('express');
+var ejs     = require('ejs');
+var fs      = require('fs');
 var path    = require('path');
 
 var app = express();
+
+// serve icon as different colors
+app.get('/pin.svg/:color', function (req, res) {
+  fs.readFile(path.join(__dirname, '../views/pin.svg'), function (err, data) {
+    if (err) console.error(err);
+
+    res.writeHead(200, { 'Content-Type': 'image/svg+xml' });
+    res.end(ejs.render(data.toString(), {
+      color: req.params.color
+    }));
+
+  });
+});
 
 // static assets
 app.use('/', express.static(path.join(__dirname, '../public/')));

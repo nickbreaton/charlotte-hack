@@ -38,4 +38,5 @@ window.addEventListener('load', function () {
     }, 100);
   });
 
+  overlay.addClass('active');
 });
