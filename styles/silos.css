@@ -4,7 +4,7 @@
   bottom: 0;
   cursor: pointer;
   z-index: 0;
-  transition: 1s;
+  transition: right 1s, left 1s;
   overflow: hidden;
 }
 
@@ -85,5 +85,4 @@
 .silo.active {
   left: 0 !important;
   right: 0 !important;
-  z-index: 1;
 }

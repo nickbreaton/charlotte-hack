@@ -14,6 +14,15 @@ window.addEventListener('load', function () {
     // toggle class on and off
     silo.toggleClass('active');
 
+    // toggle z
+    if (silo.hasClass('active')) {
+      silo.css('z-index', 1);
+    } else {
+      setTimeout(function () {
+        silo.css('z-index', 0);
+      }, 1000);
+    }
+
     // remove overlay if not clicked
     overlay.removeClass('active');
 
