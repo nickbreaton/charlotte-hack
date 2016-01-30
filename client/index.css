@@ -10,10 +10,6 @@ body {
     padding: 10px;
 }
 
-h1{
-  background: red;
-}
-
 #content {
     max-width: 800px;
     width: 90%;
@@ -41,11 +37,11 @@ h1{
 }
 
 button {
-    padding: 15px;
+    padding: 10px;
     border: none;
     border-radius: 5px;
     background: #3a9bdc;
-    width: 150px;
+    width: 120px;
     font-size: 18px;
     color: white;
     outline: 0;
@@ -67,4 +63,32 @@ button:hover {
 
 .buttons {
     display: block;
+}
+
+h1 {
+    font-family: 'Open Sans';
+    font-size: 30px;
+    
+}
+
+input[type="text"] {
+    height: 40px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+input.address {
+    width: 65%;
+    margin: 20px 0;
+    float: left;
+    margin-bottom: 50px;
+}
+
+.current-location {
+    width: auto;
+    float: right;
+    margin-top: 18px;
 }
