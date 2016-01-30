@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Open Sans';
 }
 
 body {
@@ -27,6 +28,7 @@ body {
     display: inline-block;
     height: 0;
     opacity: 0;
+    width: 100%;
 }
 
 .visible {
@@ -34,41 +36,31 @@ body {
     opacity: 1 !important;
 }
 
-#steps {
-    background: red;
+button {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background: #3a9bdc;
+    width: 150px;
+    font-size: 18px;
+    color: white;
+    outline: 0;
+    cursor: pointer;
     display: inline-block;
-    width: 100%;
-    height: 60px;
-    position: relative;
 }
 
-.step-bubble {
-    display: inline-block;
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background: black;
+button:first-child {
+    float: left;
 }
 
-.step-bubble.first {
-    left: 0;
-    right: auto;
+button:last-child {
+    float: right;
 }
 
-.step-center {
-    width: 100%;
-    position: absolute;
-    background: blue;
-    height: 100%;
-    text-align: center;
-}
-.step-bubble.middle {
-    position: relative;
-    display: inline;
-    margin: auto;
+button:hover {
+    opacity: 0.75;
 }
 
-.step-bubble.last {
-    right: 0;
-    left: auto;
+.buttons {
+    display: block;
 }
