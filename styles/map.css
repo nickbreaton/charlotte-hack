@@ -21,8 +21,17 @@
   margin-top: 20px;
   background: rgba(0,0,0,.15);
   padding: 20px;
+  height: 300px;
 }
 
+td{
+  padding-left: 150px;
+}
+
+.name {
+color: #fff !important;
+width: auto;
+}
 .entry {
   color: white;
   font-weight: bold;
