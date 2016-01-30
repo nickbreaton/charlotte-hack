@@ -2,29 +2,18 @@ window.addEventListener('load', function () {
   map({ lat: 0, lng: 0}, null, 1);
 });
 
-
-function sendToServer (numbers, silo) {
+function data (silo) {
   navigator.geolocation.getCurrentPosition(function (pos) {
     var lat = pos.coords.latitude;
     var lng = pos.coords.longitude;
 
-    numbers += '' + window.zip;
-    map({ lat: lat, lng: lng }, [], 12, silo ? silo.css('background-color') : 'black');
+    // GET /api/name/lat/lng
+    $.get('/api/' + silo.attr('id') + '/' + lat + '/' + lng, function (data) {
+      var locations = JSON.parse(data);
+      map({ lat: lat, lng: lng }, locations, 7, silo.css('background-color'));
+    });
   });
-}
 
-function data (silo) {
-  switch (silo.attr('id')) {
-    case 'silo-closest':
-      sendToServer('4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0', silo);
-      break;
-    case 'silo-quietest':
-      sendToServer('0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0', silo);
-      break;
-    case 'silo-cleanist':
-      sendToServer('0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 0 0 0 0 0 0 0', silo);
-      break;
-  }
 }
 
 function map (home, locations, zoom, color) {
