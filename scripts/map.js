@@ -1,5 +1,5 @@
 window.addEventListener('load', function () {
-  map({ lat: 0, lng: 0}, 15);
+  map({ lat: 0, lng: 0}, null, 1);
 });
 
 function data (silo) {
@@ -30,11 +30,13 @@ function map (home, locations, zoom, color) {
     icon: '/pin.svg/' + color + '/' + true
   });
 
-  locations.forEach(function (loc) {
-    new google.maps.Marker({
-      position: loc,
-      map: map,
-      icon: '/pin.svg/' + color + '/' + false
+  if (locations) {
+    locations.forEach(function (loc) {
+      new google.maps.Marker({
+        position: loc,
+        map: map,
+        icon: '/pin.svg/' + color + '/' + false
+      });
     });
-  });
+  }
 }

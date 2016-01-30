@@ -17,6 +17,8 @@ window.addEventListener('load', function () {
     // toggle z
     if (silo.hasClass('active')) {
       silo.css('z-index', 1);
+
+      // pass data to mapping 
       data(silo);
     } else {
       setTimeout(function () {
