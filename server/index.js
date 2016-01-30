@@ -7,6 +7,9 @@ var app = express();
 app.use('/styles', express.static(path.join(__dirname, '../styles/')));
 app.use('/scripts', express.static(path.join(__dirname, '../scripts/')));
 
+// vendor assets
+app.use('/vendor', express.static(path.join(__dirname, '../node_modules/jquery/dist/')));
+
 // serve base site
 app.use('*', express.static(path.join(__dirname, '../views/')));
 

@@ -2,6 +2,7 @@
   "main": "server/index.js",
   "dependencies": {
     "ejs": "^2.4.1",
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "jquery": "^2.2.0"
   }
 }
