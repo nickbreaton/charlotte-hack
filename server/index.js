@@ -1,21 +1,16 @@
-'use strict';
-
 var cp = require('child_process');
 var express = require('express');
+var path = require('path');
 
 var app = express();
 
-app.get('/', (req, res) => {
+app.get('/hi', (req, res) => {
    cp.exec('python test.py', function (err, data) {
       res.end(data);    
    });
 });
 
+// serve client folder
+app.use(express.static(path.join(__dirname, '../client/')));
+
 app.listen(8080);
-
-
-let python = cp.spawn('python', ['-v']);
-   
-python.stdout.on('data', function (data) {
-    console.log(data);
-});
