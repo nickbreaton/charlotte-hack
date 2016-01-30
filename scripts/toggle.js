@@ -2,7 +2,7 @@ window.addEventListener('load', function () {
   var silos = $('.silo');
   var overlay = $('#overlay');
 
-  silos.on('click',function (e) {
+  silos.on('click', function (e) {
     // query clicked element
     var silo = $(e.toElement);
 
@@ -14,11 +14,22 @@ window.addEventListener('load', function () {
     // toggle class on and off
     silo.toggleClass('active');
 
+    // enable on sliders
+    if (silo.attr('id') == 'silo-top-rated') {
+      if (!silo.hasClass('active')) {
+        $('#custom').toggleClass('active');
+      } else {
+        setTimeout(function () {
+          $('#custom').toggleClass('active');
+        }, 1000);
+      }
+    }
+
     // toggle z
     if (silo.hasClass('active')) {
       silo.css('z-index', 1);
 
-      // pass data to mapping 
+      // pass data to mapping
       data(silo);
     } else {
       setTimeout(function () {
