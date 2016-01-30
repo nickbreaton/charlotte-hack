@@ -1,0 +1,9 @@
+#front,
+#location,
+#hospital-pref,
+#medical-issues,
+#results {
+    display: inline-block;
+    height: 0;
+    opacity: 0;
+}
