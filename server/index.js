@@ -4,6 +4,7 @@ var path    = require('path');
 var app = express();
 
 // static assets
+app.use('/', express.static(path.join(__dirname, '../public/')));
 app.use('/styles', express.static(path.join(__dirname, '../styles/')));
 app.use('/scripts', express.static(path.join(__dirname, '../scripts/')));
 

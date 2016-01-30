@@ -5,18 +5,63 @@
   cursor: pointer;
   z-index: 0;
   transition: 1s;
+  overflow: hidden;
 }
 
 .silo .body {
-  /* tmp */
+  position: absolute;
+  left: 0;
+  width: 25vw;
+  transition: 0.5s transform;
+  overflow: hidden;
   text-align: center;
   color: white;
+}
+
+.silo h1 {
+  transition: 0.5s;
+  color: rgba(255,255,255,0.65);
+}
+
+.silo .icon {
+  margin-top: 350px;
+  margin-bottom: 30px;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background-size: contain;
+  background-position: center center;
+  transition: 0.5s;
+}
+
+.silo:hover h1 {
+  color: white;
+}
+
+.silo:hover .body .icon {
+  transform: scale(1.35);
 }
 
 #silo-closest {
   left: 0vw;
   right: 75vw;
   background: #2980b9;
+}
+
+#silo-closest .icon {
+  background-image: url(/icons/location.svg);
+}
+
+#silo-quietest .icon {
+  background-image: url(/icons/quiet.svg);
+}
+
+#silo-top-rated .icon {
+  background-image: url(/icons/top.svg);
+}
+
+#silo-cleanist .icon {
+  background-image: url(/icons/clean.svg);
 }
 
 #silo-quietest {
