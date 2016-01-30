@@ -6,11 +6,18 @@ var app = express();
 
 app.get('/hi', (req, res) => {
    cp.exec('python test.py', function (err, data) {
-      res.end(data);    
+      res.end(data);
    });
 });
 
 // serve client folder
 app.use(express.static(path.join(__dirname, '../client/')));
 
-app.listen(8080);
+var server = app.listen(8080, function () {
+
+    var host = server.address().address;
+    var port = server.address().port;
+
+    console.log('My site is listening at http://%s:%s', host, port);
+
+});
