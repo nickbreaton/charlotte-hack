@@ -1,0 +1,35 @@
+.silo {
+  position: absolute;
+  width: 25vw;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.silo .body {
+  width: 25vw;
+
+  /* tmp */
+  text-align: center;
+  color: white;
+}
+
+#silo-closest {
+  left: 0vw;
+  background: #2980b9;
+}
+
+#silo-quietest {
+  left: 25vw;
+  background: #27ae60;
+}
+
+#silo-top-rated {
+  left: 50vw;
+  background: #e74c3c;
+}
+
+#silo-cleanist {
+  left: 75vw;
+  background: #34495e;
+}
