@@ -17,6 +17,7 @@ window.addEventListener('load', function () {
     // toggle z
     if (silo.hasClass('active')) {
       silo.css('z-index', 1);
+      data(silo);
     } else {
       setTimeout(function () {
         silo.css('z-index', 0);
@@ -37,6 +38,4 @@ window.addEventListener('load', function () {
       }
     }, 100);
   });
-
-  overlay.addClass('active');
 });

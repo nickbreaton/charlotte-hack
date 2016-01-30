@@ -5,6 +5,8 @@ var path    = require('path');
 
 var app = express();
 
+require('./api')(app);
+
 // serve icon as different colors
 app.get('/pin.svg/:color', function (req, res) {
   fs.readFile(path.join(__dirname, '../views/pin.svg'), function (err, data) {
